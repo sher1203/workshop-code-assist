@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import products from './product'; // Import the product data
 
 function Products() {
   const [productData, setProductData] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
+  const searchInputRef = useRef(null); // Reference to the search input
 
   useEffect(() => {
     setProductData(products);
@@ -20,11 +21,17 @@ function Products() {
         product.description.toLowerCase().includes(searchTerm.toLowerCase())
       );
 
+  // Focus on the search input when the component mounts
+  useEffect(() => {
+    searchInputRef.current.focus();
+  }, []);
+
   return (
     <div className="content">
       <h1>Our Products</h1>
       <div className="search-bar">
         <input
+          ref={searchInputRef} // Assign the reference
           type="text"
           placeholder="Search products..."
           value={searchTerm}
