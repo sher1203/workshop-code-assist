@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Timer</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #timer {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1.2em;
+      margin: 0 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #start {
+      background-color: #4CAF50; /* Green */
+      color: white;
+    }
+
+    #start.paused {
+      background-color: #f44336; /* Red */
+      color: white;
+    }
+
+    #reset.paused {
+      background-color: #f44336; /* Red */
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div id="timer">00:00</div>
+  <button id="start">Start</button>
+  <button id="reset">Reset</button>
+
+  <script>
+    let timerInterval;
+    let seconds = 0;
+    let isRunning = false;
+
+    const timerDisplay = document.getElementById('timer');
+    const startButton = document.getElementById('start');
+    const resetButton = document.getElementById('reset');
+
+    function formatTime(seconds) {
+      const minutes = Math.floor(seconds / 60);
+      const remainingSeconds = seconds % 60;
+      return `${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
+    }
+
+    function updateTimer() {
+      seconds++;
+      timerDisplay.textContent = formatTime(seconds);
+    }
+
+    startButton.addEventListener('click', () => {
+      if (!isRunning) {
+        isRunning = true;
+        timerInterval = setInterval(updateTimer, 1000);
+        startButton.textContent = 'Pause';
+        startButton.classList.add('paused'); // Add paused class
+        resetButton.classList.add('paused'); // Add paused class
+      } else {
+        isRunning = false;
+        clearInterval(timerInterval);
+        startButton.textContent = 'Start';
+        startButton.classList.remove('paused'); // Remove paused class
+        resetButton.classList.remove('paused'); // Remove paused class
+      }
+    });
+
+    resetButton.addEventListener('click', () => {
+      clearInterval(timerInterval);
+      seconds = 0;
+      timerDisplay.textContent = formatTime(seconds);
+      isRunning = false;
+      startButton.textContent = 'Start';
+      startButton.classList.remove('paused'); // Remove paused class
+      resetButton.classList.remove('paused'); // Remove paused class
+    });
+  </script>
+</body>
+</html>
