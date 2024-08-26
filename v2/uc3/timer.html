@@ -24,9 +24,22 @@
       margin: 0 10px;
       border: none;
       border-radius: 5px;
-      background-color: #4CAF50;
-      color: white;
       cursor: pointer;
+    }
+
+    #start {
+      background-color: #4CAF50; /* Green */
+      color: white;
+    }
+
+    #start.paused {
+      background-color: #f44336; /* Red */
+      color: white;
+    }
+
+    #reset.paused {
+      background-color: #f44336; /* Red */
+      color: white;
     }
   </style>
 </head>
@@ -60,10 +73,14 @@
         isRunning = true;
         timerInterval = setInterval(updateTimer, 1000);
         startButton.textContent = 'Pause';
+        startButton.classList.add('paused'); // Add paused class
+        resetButton.classList.add('paused'); // Add paused class
       } else {
         isRunning = false;
         clearInterval(timerInterval);
         startButton.textContent = 'Start';
+        startButton.classList.remove('paused'); // Remove paused class
+        resetButton.classList.remove('paused'); // Remove paused class
       }
     });
 
@@ -73,6 +90,8 @@
       timerDisplay.textContent = formatTime(seconds);
       isRunning = false;
       startButton.textContent = 'Start';
+      startButton.classList.remove('paused'); // Remove paused class
+      resetButton.classList.remove('paused'); // Remove paused class
     });
   </script>
 </body>
