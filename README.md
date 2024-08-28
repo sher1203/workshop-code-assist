@@ -13,3 +13,35 @@ This repository features self-contained, hands-on-labs with detailed and step-by
 ## Prerequisites
 - Install the updated version of [Node JS](https://nodejs.org/en/download/package-manager)
 - Install the [Gemini Code Assist extension](https://marketplace.visualstudio.com/items?itemName=GoogleCloudTools.cloudcode&ssr=false#overview) on VSCode
+
+## Prompts for our use cases
+- Create a responsive navigation menu using html, css and run it on nodejs.
+
+  - This should create a menu that should be accessible on desktop, mobiles and tablets
+  - It should be simple for the user to navigate.
+  - Incorporate React to handle the menu.
+  - Update the files index.html, index.js, app.css, app.js
+- Implement a Simple Timer with Start and Reset Buttons Description: Create a web-based timer that allows users to start and reset a countdown.
+  -  Acceptance Criteria: The timer should display the elapsed time in a clear and readable format (e.g., seconds, minutes:seconds). The "Start" button should initiate the countdown when clicked. The "Reset" button should stop the countdown and reset the elapsed time to zero. The timer should be visually appealing and easy to use.
+  -  Technical   Notes: Consider using JavaScript's setInterval() function to update the timer display every second. Implement a boolean variable to track whether the timer is running or paused. Use CSS to style the timer and buttons.
+
+  - Please update the index.html file with your code
+- Change the color of start and reset buttons after the timer starts running. Make sure the start button changes to pause after timer starts. Change the colors of the buttons of pause and reset to red when the timer starts running. Update the timer.html code
+- On my current code, add a 'Product' option in the menu list along with Home, About, Services, Contact. Once clicked on the product option, please show me a list of products with relevant information like name, price and description. Fetch product data from https://fakestoreapi.com/products . Update the files app.css, app.js, index.html and index.js. Please don't add additional files to our code
+- Implement search functionality.
+
+  - Create a search bar that allows users to search for products or contents on the website. Results should be relevant and accurate with minimal latency. Update only the app.js, app.css, index.js, and index.html files
+- Create a cart and checkout page.
+
+  - Create a cart where we can add the products to.
+  - Once the cart is created, a checkout page should be enabled and we should be able to navigate into the checkout page to view our cart. Update only the app.css,app.js, index.html and index.js files
+- Create todo list app on python
+
+  - It should run on the terminal and I should be able to create, update , view and delete tasks.
+- Understanding and translating a codebase
+  - Go through the asp codes and interpret them
+  - As an app architect create me a design document for this code
+  - Translate this into a react.js application
+  - Create me a unit test for this code using the playwright framework
+  - If I upgraded this code to a more modern c# webform app, what would the aspx page look like
+
