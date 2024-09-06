@@ -35,13 +35,10 @@ This repository features self-contained, hands-on-labs with detailed and step-by
 
   - Create a cart where we can add the products to.
   - Once the cart is created, a checkout page should be enabled and we should be able to navigate into the checkout page to view our cart. Update only the app.css,app.js, index.html and index.js files
-- Create todo list app on python
 
-  - It should run on the terminal and I should be able to create, update , view and delete tasks.
 - Understanding and translating a codebase
   - Go through the asp codes and interpret them
   - As an app architect create me a design document for this code
-  - Translate this into a react.js application
-  - Create me a unit test for this code using the playwright framework
+  - Translate this into Java
   - If I upgraded this code to a more modern c# webform app, what would the aspx page look like
 
